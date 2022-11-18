@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>로그인</h1>
-	<form action="login.do" method="post">
-		<input type="text" name="mid">
-		<input type="text" name="mpw">
-		<input type="submit" value="login">
-	</form>
-	
-	<a href="signUp.jsp">회원가입</a>
+	<h1>글 상세페이지</h1>
+	<table>
+	<tr>
+		<td>글 제목 : ${bData.title}</td>
+		<td>작성자 : ${bData.writer}</td>
+		<td>글 내용 : ${bData.context}</td>
+		<td><a href="main.do">메인으로</a></td>
+	</tr>
+	</table>
 </body>
 </html>

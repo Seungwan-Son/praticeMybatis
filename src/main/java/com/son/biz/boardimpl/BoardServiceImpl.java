@@ -2,34 +2,37 @@ package com.son.biz.boardimpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.son.biz.board.BoardService;
 import com.son.biz.board.BoardVO;
 
+@Service("boardService")
 public class BoardServiceImpl implements BoardService{
 
+	@Autowired
+	private BoardDAO boardDAO;
+	
 	@Override
 	public void insertBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
-		
+		boardDAO.insertBoard(vo);
 	}
 
 	@Override
 	public void deleteBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
-		
+		boardDAO.deleteBoard(vo);
 	}
 
 
 	@Override
 	public BoardVO selectOneBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		return boardDAO.selectOneBoard(vo);
 	}
 
 	@Override
 	public List<BoardVO> selectAllBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		return boardDAO.selectAllBoard(vo);
 	}
 
 }

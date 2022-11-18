@@ -2,15 +2,21 @@ package com.son.biz.memberimpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.son.biz.member.MemberService;
 import com.son.biz.member.MemberVO;
 
+@Service("memberService")
 public class MemberServiceImpl implements MemberService{
 
+	@Autowired
+	private MemberDAO memberDAO;
+	
 	@Override
 	public void insertMember(MemberVO vo) {
-		// TODO Auto-generated method stub
-		
+		memberDAO.insertMember(vo);
 	}
 
 	@Override
@@ -21,8 +27,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public MemberVO selectOneMemberVO(MemberVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		return memberDAO.selectOneMember(vo);
 	}
 
 	@Override

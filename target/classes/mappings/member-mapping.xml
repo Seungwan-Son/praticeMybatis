@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappings.member-mapping"></mapper>
+<mapper namespace="MemberDAO">
+
+	<resultMap type="member" id="memberResult">
+		<id property="mid" column="MID" />
+		<result property="mpw" column="MPW"/>
+		<result property="mname" column="MNAME"/>
+	</resultMap>
+
+	<insert id="insertMember">
+		INSERT INTO MEMBER VALUES(#{mid}, #{mpw},#{mname})
+	</insert>
+	
+	<select id="selectOneMember">
+		SELECT * FROM MEMBER WHERE MID=#{MID}
+	</select>
+</mapper>
